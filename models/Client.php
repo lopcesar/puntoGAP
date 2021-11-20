@@ -53,13 +53,13 @@ class Client extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'clientName' => Yii::t('app', 'Client Name'),
-            'address' => Yii::t('app', 'Address'),
+            'clientName' => Yii::t('app', 'Nombre de cliente'),
+            'address' => Yii::t('app', 'Direccion'),
             'email' => Yii::t('app', 'Email'),
-            'phoneNumber' => Yii::t('app', 'Phone Number'),
-            'registerDate' => Yii::t('app', 'Register Date'),
-            
-            'idWork' => Yii::t('app', 'Id Work'),
+            'phoneNumber' => Yii::t('app', 'Numero de Telefono'),
+            'registerDate' => Yii::t('app', 'Fecha de registro'),
+            'idUser' => Yii::t('app', 'Usuario'),
+            'idWork' => Yii::t('app', 'Trabajo'),
         ];
     }
 

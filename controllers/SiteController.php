@@ -63,7 +63,7 @@ class SiteController extends Controller
     public function actionIndex()
     
     {
-        $model = new LoginForm;
+        return $this->render('index');
         return $this->render('index', ['model' => $model]);
     }
 
@@ -75,7 +75,7 @@ class SiteController extends Controller
     public function actionLogin()
     {
 
-        $this->layout = 'login';
+        
         
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();

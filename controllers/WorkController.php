@@ -31,6 +31,7 @@ class WorkController extends Controller
                         [
                             'allow' => true,
                             'roles' => ['@'],
+                             
                         ],
                     ],
                 ],
@@ -155,7 +156,7 @@ class WorkController extends Controller
                 unlink($model->image);
                 }
             }
-            $model->image->saveAs('image/'.$model->image->baseName.'.'.$model->image->extension);
+            $model->image->saveAs('images/'.$model->image->baseName.'.'.$model->image->extension);
         
             
 

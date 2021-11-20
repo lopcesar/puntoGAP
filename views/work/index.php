@@ -1,33 +1,31 @@
 <?php
 
-use yii\helpers\Html;
 use yii\grid\GridView;
-use yii\base\Model;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\WorkSerch */
+/* @var $searchModel app\models\ClientSerch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Works');
+$this->title = Yii::t('app', 'Trabajos');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="work-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?=Html::encode($this->title)?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Work'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?=Html::a(Yii::t('app', 'Crear Trabajo'), ['create'], ['class' => 'btn btn-success'])?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
-        'models' => $dataProvider->getModels(),
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            'id',
+    <?=GridView::widget([
+    'dataProvider' => $dataProvider,
+    'filterModel' => $searchModel,
+    'columns' => [
+        
+            //'id',
             'createdWork',
             'startWork',
             'finishWork',
@@ -41,9 +39,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ]
             ,
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+        ['class' => 'yii\grid\ActionColumn'],
+    ],
+]);?>
 
 
 </div>

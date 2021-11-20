@@ -26,11 +26,16 @@ AppAsset::register($this);
 <body class="d-flex flex-column h-100">
 <?php $this->beginBody() ?>
 
+
+
+
+
 <header>
     <div>
         <p class="float-left">&copy; My Company <?= date('Y') ?></p>
     </div>
     <?php
+   
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
@@ -43,14 +48,11 @@ echo Nav::widget(
     [
         'options' => ['class' => 'navbar-nav'],
         'items' => [
+            ['visible' => !Yii::$app->user->isGuest, 'label' => 'Home', 'url' => ['/site/index']],
+            ['visible' => !Yii::$app->user->isGuest, 'label' => 'Trabajos', 'url' => ['/work/index']],
+            ['visible' => !Yii::$app->user->isGuest, 'label' => 'Clientes', 'url' => ['/client/index']],
+                                              
             
-            ['label' => 'Inicio', 'url' => ['/site/index']],
-            ['label' => 'Clientes', 'url' => ['/client/index']],
-            (!Yii::$app->user->isGuest) ? (
-            
-                ['label' => 'Trabajos', 'url' => ['/work/index']])
-            : (""),
-
             Yii::$app->user->isGuest ? (
                 ['label' => 'Iniciar Sesion', 'url' => ['/site/login']]
             ) : (
@@ -63,7 +65,6 @@ echo Nav::widget(
                 . Html::endForm()
                 . '</li>'
             ),
-
             ['label' => 'Fecha ' . date('d-m-Y'),
                 'option' => ['class' => 'align-right']],
         ],

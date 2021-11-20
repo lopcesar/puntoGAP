@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\widgets\DatePicker;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Work */
@@ -19,7 +21,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'finishWork')->textInput() ?>
 
     <?= $form->field($model, 'detail')->textInput(['maxlength' => true]) ?>
-
+    
     <?= $form->field($model, 'totalHours')->textInput() ?>
 
     <?= Html::img($model->image,['width'=>'60px']) ?>

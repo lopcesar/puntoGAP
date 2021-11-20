@@ -67,8 +67,8 @@ class Work extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-   /*  public function getClients()
+     public function getClients()
     {
         return $this->hasMany(Client::className(), ['idWork' => 'id']);
-    } */
+    } 
 }
